@@ -17,7 +17,6 @@
 import math
 from scipy.io import loadmat
 from sys import path
-path.insert(0, 'General/')
 import Errors
 import Graph
 import Poisson_2D
@@ -31,7 +30,7 @@ mesh = '21'
 # This region can be changed for any other triangulation, unstructured cloud of points or mesh on Regions/ or with any other region with the same file data structure.
 
 # All data is loaded from the file
-mat = loadmat('Regions/Clouds/' + region + '_' + cloud + '.mat')
+mat = loadmat('Data/Clouds/' + region + '_' + cloud + '.mat')
 
 # Node data is saved
 p   = mat['p']
@@ -42,7 +41,7 @@ if tt.min() == 1:
     tt -= 1
 
 # All data is loaded from the file
-mat = loadmat('Regions/Meshes/' + region + mesh + '.mat')
+mat = loadmat('Data/Meshes/' + region + mesh + '.mat')
 
 # Node data is saved
 x  = mat['x']
