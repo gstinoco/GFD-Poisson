@@ -24,13 +24,15 @@ import Poisson_2D
 # Region data is loaded.
 # Triangulation or unstructured cloud of points to work in.
 region = 'CAB'
-cloud = '1'
+cloud = '3'
 # Mesh size to work in.
-mesh = '21'
+mesh = '81'
 # This region can be changed for any other triangulation, unstructured cloud of points or mesh on Regions/ or with any other region with the same file data structure.
 
 # All data is loaded from the file
-mat = loadmat('Data/Clouds/' + region + '_' + cloud + '.mat')
+mat  = loadmat('Data/Clouds/' + region + '_' + cloud + '.mat')
+nomc = 'Results/Clouds/' + region + '_' + cloud + '.png'
+nomt = 'Results/Triangulations/' + region + '_' + cloud + '.png'
 
 # Node data is saved
 p   = mat['p']
@@ -41,7 +43,8 @@ if tt.min() == 1:
     tt -= 1
 
 # All data is loaded from the file
-mat = loadmat('Data/Meshes/' + region + mesh + '.mat')
+mat  = loadmat('Data/Meshes/' + region + mesh + '.mat')
+nomm = 'Results/Meshes/' + region + mesh + '.png'
 
 # Node data is saved
 x  = mat['x']
@@ -65,16 +68,16 @@ def f(x,y):
 phi_ap, phi_ex = Poisson_2D.Mesh(x, y, phi, f)
 er = Errors.Mesh_Static(x, y, phi_ap, phi_ex)
 print('The mean square error in the mesh', region, 'with', mesh, 'points per side is: ', er)
-Graph.Mesh_Static(x, y, phi_ap, phi_ex)
+Graph.Mesh_Static_sav(x, y, phi_ap, phi_ex, nomm)
 
 # Poisson 2D computed in a triangulation
 phi_ap, phi_ex, vec = Poisson_2D.Triangulation(p, pb, tt, phi, f)
 er = Errors.Cloud_Static(p, vec, phi_ap, phi_ex)
 print('The mean square error in the triangulation', region, 'with size', cloud, 'is: ', er)
-Graph.Cloud_Static(p, tt, phi_ap, phi_ex)
+Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomt)
 
 # Poisson 2D computed in an unstructured cloud of points
 phi_ap, phi_ex, vec = Poisson_2D.Cloud(p, pb, phi, f)
 er = Errors.Cloud_Static(p, vec, phi_ap, phi_ex)
 print('The mean square error in the unstructured cloud of points', region, 'with size', cloud, 'is: ', er)
-Graph.Cloud_Static(p, tt, phi_ap, phi_ex)
+Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomc)
