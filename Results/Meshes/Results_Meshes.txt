@@ -18,6 +18,9 @@ CURVA:
 	
 
 DOWN:
+
+
+ELE:
 	
 
 ENG:
