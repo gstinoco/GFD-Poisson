@@ -9,10 +9,10 @@
 #   Aula CIMNE Morelia. México
 #
 # Date:
-#   November, 2022.
+#   January, 2023.
 #
 # Last Modification:
-#   December, 2022.
+#   January, 2023.
 
 import math
 from scipy.io import loadmat
@@ -22,9 +22,8 @@ import Graph
 import Poisson_2D
 
 # Region data is loaded.
-# Mesh size to work in.
 
-regiones = ['CHA','CUAD','CUIT','CURVA','DOWN','ELE','ENG','GIB','HA','HAB','MI','MIC','MID','PATZ','SWA','TERRA','TRAP','UC','UCH','UP','ZIRA']
+regiones = ['CAB','CHA','CUAD','CUIT','CURVA','DOWN','ELE','ENG','GIB','HA','HAB','MI','MIC','MID','PATZ','SWA','TERRA','TRAP','UC','UCH','UP','ZIRA']
 sizes = ['21', '41']
 
 for reg in regiones:
