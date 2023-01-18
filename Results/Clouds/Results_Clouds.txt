@@ -11,7 +11,8 @@ CHA:
 	The mean square error in the unstructured cloud of points CHA with size 4 is:	1.0534146052735278e-07
 
 CUAD:
-    
+    The mean square error in the unstructured cloud of points CUAD with size 1 is:	0.0023122080089400146
+
 
 CUIT:
 	The mean square error in the unstructured cloud of points CUIT with size 1 is:	0.0032086713980473236
@@ -34,12 +35,17 @@ ELE:
 	The mean square error in the unstructured cloud of points ELE with size 1 is:	0.00029753288544124185
 	The mean square error in the unstructured cloud of points ELE with size 2 is:	3.229890801316246e-05
 	The mean square error in the unstructured cloud of points ELE with size 3 is:	1.1749045079245957e-05
+	The mean square error in the unstructured cloud of points ELE with size 4 is:	4.310481641823319e-07
 
 ENG:
-
+	The mean square error in the unstructured cloud of points ENG with size 1 is:	7.634869561497873e-05
+	The mean square error in the unstructured cloud of points ENG with size 2 is:	1.1214411094858228e-05
+	The mean square error in the unstructured cloud of points ENG with size 3 is:	1.7092661739547886e-06
+	The mean square error in the unstructured cloud of points ENG with size 4 is:	1.8085011037907682e-07
 
 GIBR:
-
+	The mean square error in the unstructured cloud of points GIBR with size 1 is:	7.834579174118684e-05
+	The mean square error in the unstructured cloud of points GIBR with size 2 is: 	8.723226806104714e-06
 
 HA:
 

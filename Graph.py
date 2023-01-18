@@ -17,13 +17,7 @@
 # Graphics
 # Some routines are defined in here in order to correctly Graph different kinds of results.
 
-import numpy as np
-import math
 import matplotlib.pyplot as plt
-from matplotlib.ticker import LinearLocator
-import matplotlib.tri as mtri
-import cv2
-from mpl_toolkits import mplot3d
 from matplotlib import cm
 
 def Mesh_Static(x, y, u_ap, u_ex):
