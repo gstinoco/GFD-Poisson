@@ -1,0 +1,29 @@
+CAB:
+	The mean square error in the triangulation CAB with size 1 is:					0.0004901419538689052
+	The mean square error in the triangulation CAB with size 2 is:					5.661549003312302e-05
+	The mean square error in the triangulation CAB with size 3 is:					6.576996779672352e-06
+	The mean square error in the triangulation CAB with size 4 is:					6.122670872779368e-07
+
+CHA:
+	The mean square error in the triangulation CHA with size 1 is:					7.747088688744168e-05
+	The mean square error in the triangulation CHA with size 2 is:					8.910650476235024e-06
+	The mean square error in the triangulation CHA with size 3 is:					1.2713396455573747e-06
+	The mean square error in the triangulation CHA with size 4 is:					1.1607291232530956e-07
+
+CUIT:
+	The mean square error in the triangulation CUIT with size 1 is:					0.0035710440674821885
+	The mean square error in the triangulation CUIT with size 2 is:					0.0004315196588321791
+	The mean square error in the triangulation CUIT with size 3 is:					5.811312683127408e-05
+	The mean square error in the triangulation CUIT with size 4 is:					6.122736902916826e-06
+
+CURVA:
+	The mean square error in the triangulation CURVA with size 1 is:				0.0008443621166164143
+	The mean square error in the triangulation CURVA with size 2 is:				0.00011149756706643482
+	The mean square error in the triangulation CURVA with size 3 is:				1.2317059160059507e-05
+	The mean square error in the triangulation CURVA with size 4 is:				1.319239507703094e-06
+
+DOWN:
+	The mean square error in the triangulation DOWN with size 1 is:					3.0715794309234e-05
+	The mean square error in the triangulation DOWN with size 2 is:					3.3847075617643432e-06
+	The mean square error in the triangulation DOWN with size 3 is:					3.66272839559492e-07
+
