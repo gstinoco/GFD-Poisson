@@ -23,7 +23,8 @@ import Poisson_2D
 # Region data is loaded.
 # Triangulation or unstructured cloud of points to work in.
 
-regiones = ['CAB','CHA','CUAD','CUIT','CURVA','DOWN','ELE','ENG','GIBR','HA','HAB','MI','MIC','MID','PATZ','SWA','TERRA','TRAP','UC','UCH','UP','ZIRA']
+#regiones = ['CAB','CHA','CUAD','CUIT','CURVA','DOWN','ELE','ENG','GIBR','HA','HAB','MI','MIC','MID','PATZ','SWA','TERRA','TRAP','UC','UCH','UP','ZIRA']
+regiones = ['ELE','ENG','GIBR','HA','HAB','MI','MIC','MID','PATZ','SWA','TERRA','TRAP','UC','UCH','UP','ZIRA']
 sizes = ['1', '2', '3', '4']
 
 for reg in regiones:
