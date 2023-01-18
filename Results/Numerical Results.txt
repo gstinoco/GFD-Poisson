@@ -53,4 +53,5 @@ DOWN:
 
 	The mean square error in the unstructured cloud of points DOWN with size 1 is:	2.4690990051289645e-05
 	The mean square error in the unstructured cloud of points DOWN with size 2 is:	3.146129175341277e-06
+	The mean square error in the unstructured cloud of points DOWN with size 3 is:	3.2727686997131425e-07
 
