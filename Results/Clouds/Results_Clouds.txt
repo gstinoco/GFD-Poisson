@@ -35,3 +35,46 @@ ELE:
 	The mean square error in the unstructured cloud of points ELE with size 2 is:	3.229890801316246e-05
 	The mean square error in the unstructured cloud of points ELE with size 3 is:	1.1749045079245957e-05
 
+ENG:
+
+
+GIBR:
+
+
+HA:
+
+
+HAB:
+
+
+MI:
+
+
+MIC:
+
+
+MID:
+
+
+PATZ:
+
+
+SWA:
+
+
+TERRA:
+
+
+TRAP:
+
+
+UC:
+
+
+UCH:
+
+
+UP:
+
+
+ZIRA:
