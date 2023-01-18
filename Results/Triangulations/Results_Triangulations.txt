@@ -13,7 +13,7 @@ CHA:
 CUAD:
 	The mean square error in the triangulation CUAD with size 1 is: 				0.00038553489469270543
 	The mean square error in the triangulation CUAD with size 2 is:					3.747663992617343e-05
-	
+
 
 CUIT:
 	The mean square error in the triangulation CUIT with size 1 is:					0.0035710440674821885
@@ -32,8 +32,16 @@ DOWN:
 	The mean square error in the triangulation DOWN with size 2 is:					3.3847075617643432e-06
 	The mean square error in the triangulation DOWN with size 3 is:					3.66272839559492e-07
 
-ENG:
+ELE:
+	The mean square error in the triangulation ELE with size 1 is:					0.0003713893108612559
+	The mean square error in the triangulation ELE with size 2 is:					4.659111789888946e-05
+	The mean square error in the triangulation ELE with size 3 is:					4.762271807728251e-06
+	The mean square error in the triangulation ELE with size 4 is:					4.826004244225552e-07
 
+ENG:
+	The mean square error in the triangulation ENG with size 1 is:					0.00016419463868085502
+	The mean square error in the triangulation ENG with size 2 is:					1.9833413062768836e-05
+	The mean square error in the triangulation ENG with size 3 is:					2.516121591036626e-06
 
 GIBR:
 
