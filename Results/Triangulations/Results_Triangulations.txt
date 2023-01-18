@@ -10,6 +10,9 @@ CHA:
 	The mean square error in the triangulation CHA with size 3 is:					1.2713396455573747e-06
 	The mean square error in the triangulation CHA with size 4 is:					1.1607291232530956e-07
 
+CUAD:
+
+
 CUIT:
 	The mean square error in the triangulation CUIT with size 1 is:					0.0035710440674821885
 	The mean square error in the triangulation CUIT with size 2 is:					0.0004315196588321791
@@ -27,3 +30,46 @@ DOWN:
 	The mean square error in the triangulation DOWN with size 2 is:					3.3847075617643432e-06
 	The mean square error in the triangulation DOWN with size 3 is:					3.66272839559492e-07
 
+ENG:
+
+
+GIBR:
+
+
+HA:
+
+
+HAB:
+
+
+MI:
+
+
+MIC:
+
+
+MID:
+
+
+PATZ:
+
+
+SWA:
+
+
+TERRA:
+
+
+TRAP:
+
+
+UC:
+
+
+UCH:
+
+
+UP:
+
+
+ZIRA:
