@@ -21,23 +21,28 @@ import Graph
 import Poisson_2D
 
 # Region data is loaded.
+# Triangulation or unstructured cloud of points to work in.
 
 regiones = ['CAB','CHA','CUAD','CUIT','CURVA','DOWN','ELE','ENG','GIBR','HA','HAB','MI','MIC','MID','PATZ','SWA','TERRA','TRAP','UC','UCH','UP','ZIRA']
-sizes = ['21', '41', '81']
+sizes = ['1', '2', '3', '4']
 
 for reg in regiones:
     region = reg
 
     for me in sizes:
-        mesh = me
+        cloud = me
 
         # All data is loaded from the file
-        mat  = loadmat('Data/Meshes/' + region + mesh + '.mat')
-        nomm = 'Results/Meshes/' + region + mesh + '.png'
+        mat  = loadmat('Data/Clouds/' + region + '_' + cloud + '.mat')
+        nomc = 'Results/Clouds/' + region + '_' + cloud + '.png'
 
         # Node data is saved
-        x  = mat['x']
-        y  = mat['y']
+        p   = mat['p']
+        pb  = mat['pb']
+        vec = mat['vec']
+        tt  = mat['t']
+        if tt.min() == 1:
+            tt -= 1
 
         # Boundary conditions
         # The boundary conditions are defined as
@@ -53,8 +58,8 @@ for reg in regiones:
             fun = 10*math.exp(2*x+y)
             return fun
 
-        # Poisson 2D computed in a logically rectangular mesh
-        phi_ap, phi_ex = Poisson_2D.Mesh(x, y, phi, f)
-        er = Errors.Mesh_Static(x, y, phi_ap, phi_ex)
-        print('The mean square error in the mesh', region, 'with', mesh, 'points per side is: ', er)
-        Graph.Mesh_Static_sav(x, y, phi_ap, phi_ex, nomm)
+        # Poisson 2D computed in an unstructured cloud of points
+        phi_ap, phi_ex, vec = Poisson_2D.Cloud(p, pb, phi, f)
+        er = Errors.Cloud_Static(p, vec, phi_ap, phi_ex)
+        print('The mean square error in the unstructured cloud of points', region, 'with size', cloud, 'is: ', er)
+        Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomc)
