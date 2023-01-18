@@ -1,15 +1,55 @@
 CAB:
-	The mean square error in the mesh CAB with 21 points per side is:  				0.001335963029373331
-	The mean square error in the mesh CAB with 41 points per side is:  				0.00033309211188058146
-	The mean square error in the mesh CAB with 81 points per side is:  				8.35094030162667e-05
+	The mean square error in the mesh CAB with 21 points per side is:				0.001335963029373331
+	The mean square error in the mesh CAB with 41 points per side is:				0.00033309211188058146
+	The mean square error in the mesh CAB with 81 points per side is:				8.35094030162667e-05
 
-	The mean square error in the triangulation CAB with size 1 is:  				0.0004901419538689052
-	The mean square error in the triangulation CAB with size 2 is:  				5.661549003312302e-05
-	The mean square error in the triangulation CAB with size 3 is:  				6.576996779672352e-06
-	The mean square error in the triangulation CAB with size 4 is:  				6.122670872779368e-07
+	The mean square error in the triangulation CAB with size 1 is:					0.0004901419538689052
+	The mean square error in the triangulation CAB with size 2 is:					5.661549003312302e-05
+	The mean square error in the triangulation CAB with size 3 is:					6.576996779672352e-06
+	The mean square error in the triangulation CAB with size 4 is:					6.122670872779368e-07
 
-	The mean square error in the unstructured cloud of points CAB with size 1 is:  	0.0004428205347785127
-	The mean square error in the unstructured cloud of points CAB with size 2 is:  	5.867645664096162e-05
-	The mean square error in the unstructured cloud of points CAB with size 3 is:  	6.0162346083127265e-06
-	The mean square error in the unstructured cloud of points CAB with size 4 is:  	1.6451932709250117e-06
-	
+	The mean square error in the unstructured cloud of points CAB with size 1 is:	0.0004428205347785127
+	The mean square error in the unstructured cloud of points CAB with size 2 is:	5.867645664096162e-05
+	The mean square error in the unstructured cloud of points CAB with size 3 is:	6.0162346083127265e-06
+	The mean square error in the unstructured cloud of points CAB with size 4 is: 	1.6451932709250117e-06
+
+CHA:
+	The mean square error in the triangulation CHA with size 1 is:					7.747088688744168e-05
+	The mean square error in the triangulation CHA with size 2 is:					8.910650476235024e-06
+	The mean square error in the triangulation CHA with size 3 is:					1.2713396455573747e-06
+	The mean square error in the triangulation CHA with size 4 is:					1.1607291232530956e-07
+
+	The mean square error in the unstructured cloud of points CHA with size 1 is:	7.947240460827663e-05
+	The mean square error in the unstructured cloud of points CHA with size 2 is:	1.0113033395785577e-05
+	The mean square error in the unstructured cloud of points CHA with size 3 is:	1.0454573009920563e-06
+	The mean square error in the unstructured cloud of points CHA with size 4 is:	1.0534146052735278e-07
+
+CUIT:
+	The mean square error in the triangulation CUIT with size 1 is:					0.0035710440674821885
+	The mean square error in the triangulation CUIT with size 2 is:					0.0004315196588321791
+	The mean square error in the triangulation CUIT with size 3 is:					5.811312683127408e-05
+	The mean square error in the triangulation CUIT with size 4 is:					6.122736902916826e-06
+
+	The mean square error in the unstructured cloud of points CUIT with size 1 is:	0.0032086713980473236
+	The mean square error in the unstructured cloud of points CUIT with size 2 is:	0.0003966157781095352
+	The mean square error in the unstructured cloud of points CUIT with size 3 is:	5.431991747618702e-05
+	The mean square error in the unstructured cloud of points CUIT with size 4 is:	5.4861864387473704e-06
+
+CURVA:
+	The mean square error in the triangulation CURVA with size 1 is:				0.0008443621166164143
+	The mean square error in the triangulation CURVA with size 2 is:				0.00011149756706643482
+	The mean square error in the triangulation CURVA with size 3 is:				1.2317059160059507e-05
+	The mean square error in the triangulation CURVA with size 4 is:				1.319239507703094e-06
+
+	The mean square error in the unstructured cloud of points CURVA with size 1 is:	0.0007686077330025032
+	The mean square error in the unstructured cloud of points CURVA with size 2 is:	0.00011008856446321497
+	The mean square error in the unstructured cloud of points CURVA with size 3 is:	1.2541050466219673e-05
+	The mean square error in the unstructured cloud of points CURVA with size 4 is:	1.248477553737974e-06
+
+DOWN:
+	The mean square error in the triangulation DOWN with size 1 is:					3.0715794309234e-05
+	The mean square error in the triangulation DOWN with size 2 is:					3.3847075617643432e-06
+
+	The mean square error in the unstructured cloud of points DOWN with size 1 is:	2.4690990051289645e-05
+	The mean square error in the unstructured cloud of points DOWN with size 2 is:	3.146129175341277e-06
+
