@@ -23,11 +23,10 @@ import Poisson_2D
 # Region data is loaded.
 # Triangulation to work in.
 
-regiones = ['CAB','CHA','CUAD','CUIT','CURVA','DOWN','ELE','ENG','GIBR','HA','HAB','MI','MIC','MID','PATZ','SWA','TERRA','TRAP','UC','UCH','UP','ZIRA']
-#regiones = ['GIBR','HA','HAB','MI','MIC','MID','PATZ','SWA','TERRA','TRAP','UC','UCH','UP','ZIRA']
-sizes = ['1', '2', '3','4']
+regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','SWA','ZIRA']
+sizes = ['1', '2', '3']
 
-for reg in regiones:
+for reg in regions:
     region = reg
 
     for me in sizes:
