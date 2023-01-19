@@ -9,7 +9,7 @@ CHA:
 CUAD:
 	The mean square error in the mesh CUAD with 21 points per side is:				0.006460999176174962
 	The mean square error in the mesh CUAD with 41 points per side is:				0.0016120202742884065
-	
+	The mean square error in the mesh CUAD with 81 points per side is:				0.0004028023448955398
 
 CUIT:
 	
@@ -18,6 +18,9 @@ CURVA:
 	
 
 DOWN:
+
+
+ELE:
 	
 
 ENG:

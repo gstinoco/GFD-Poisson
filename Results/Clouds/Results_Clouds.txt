@@ -46,6 +46,7 @@ ENG:
 GIBR:
 	The mean square error in the unstructured cloud of points GIBR with size 1 is:	7.834579174118684e-05
 	The mean square error in the unstructured cloud of points GIBR with size 2 is: 	8.723226806104714e-06
+	The mean square error in the unstructured cloud of points GIBR with size 3 is:	1.0181876993951877e-06
 
 HA:
 
