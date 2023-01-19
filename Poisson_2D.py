@@ -45,8 +45,8 @@ def Mesh(x, y, phi, f):
     n    = me[1]                                                                    # The number of nodes in y.
     err  = 1                                                                        # err initialization in 1.
     iter = 0                                                                        # Number of iterations.
-    tol  = 1e-10                                                                    # The tolerance is defined.
-    m_it = 10000                                                                    # Maximum number of iterations.
+    tol  = 1e-16                                                                    # The tolerance is defined.
+    m_it = 20000                                                                    # Maximum number of iterations.
     u_ap = np.zeros([m,n])                                                          # u_ap initialization with zeros.
     u_ex = np.zeros([m,n])                                                          # u_ex initialization with zeros.
 
@@ -113,8 +113,8 @@ def Triangulation(p, pb, tt, phi, f):
     nvec = 9                                                                        # The maximum number of nodes.
     err  = 1                                                                        # err initialization in 1.
     iter = 0                                                                        # Number of iterations.
-    tol  = 1e-10                                                                    # The tolerance is defined.
-    m_it = 10000                                                                    # Maximum number of iterations.
+    tol  = 1e-16                                                                    # The tolerance is defined.
+    m_it = 20000                                                                    # Maximum number of iterations.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
     
@@ -172,8 +172,8 @@ def Cloud(p, pb, phi, f):
     mf   = len(pb[:,0])                                                             # The number of boundary nodes is calculated.
     err  = 1                                                                        # err initialization in 1.
     iter = 0                                                                        # Number of iterations.
-    tol  = 1e-10                                                                    # The tolerance is defined.
-    m_it = 10000                                                                    # Maximum number of iterations.
+    tol  = 1e-16                                                                    # The tolerance is defined.
+    m_it = 20000                                                                    # Maximum number of iterations.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
 
