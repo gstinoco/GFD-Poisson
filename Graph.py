@@ -70,6 +70,7 @@ def Mesh_Static_sav(x, y, u_ap, u_ex, nom):
     ax2.plot_surface(x, y, u_ex, cmap=cm.coolwarm)
 
     plt.savefig(nom)
+    plt.close()
 
 def Cloud_Static_sav(p, tt, u_ap, u_ex, nom):
     if tt.min() == 1:
@@ -89,3 +90,4 @@ def Cloud_Static_sav(p, tt, u_ap, u_ex, nom):
     ax2.set_title('Theoretical Solution')
 
     plt.savefig(nom)
+    plt.close()
