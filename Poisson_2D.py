@@ -44,7 +44,9 @@ def Mesh(x, y, phi, f):
     m    = me[0]                                                                    # The number of nodes in x.
     n    = me[1]                                                                    # The number of nodes in y.
     err  = 1                                                                        # err initialization in 1.
+    iter = 0                                                                        # Number of iterations.
     tol  = 1e-6                                                                     # The tolerance is defined.
+    m_it = 200                                                                      # Maximum number of iterations.
     u_ap = np.zeros([m,n])                                                          # u_ap initialization with zeros.
     u_ex = np.zeros([m,n])                                                          # u_ex initialization with zeros.
 
@@ -61,7 +63,7 @@ def Mesh(x, y, phi, f):
     Gamma = Gammas.Mesh(x, y, L)                                                    # Gamma computation.
 
     # A Generalized Finite Differences Method
-    while err >= tol:                                                               # As long as the error is greater than the tolerance.
+    while err >= tol and iter <= m_it:                                              # Check for iterations and tolerance.
         err = 0                                                                     # Error becomes zero to be able to update.
         for i in range(1,m-1):                                                      # For each of the nodes on the x axis.
             for j in range(1,n-1):                                                  # For each of the nodes on the y axis.
@@ -76,6 +78,7 @@ def Mesh(x, y, phi, f):
                     Gamma[i, j, 8]*u_ap[i + 1, j - 1]))/Gamma[i, j, 0]              # u_ap is calculated at the central node.
                 err = max(err, abs(t - u_ap[i, j]));                                # Error computation.
                 u_ap[i,j] = t;                                                      # The previously computed value is assigned.
+        iter += 1                                                                   # 1 is added to the number of iterations.
     
     # Theoretical Solution
     for i in range(m):                                                              # For all the nodes on x.
@@ -109,7 +112,9 @@ def Triangulation(p, pb, tt, phi, f):
     mf   = len(pb[:,0])                                                             # The number of boundary nodes is calculated.
     nvec = 9                                                                        # The maximum number of nodes.
     err  = 1                                                                        # err initialization in 1.
-    tol  = 1e-8                                                                     # The tolerance is defined.
+    iter = 0                                                                        # Number of iterations.
+    tol  = 1e-6                                                                     # The tolerance is defined.
+    m_it = 200                                                                      # Maximum number of iterations.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
     
@@ -125,7 +130,7 @@ def Triangulation(p, pb, tt, phi, f):
     Gamma = Gammas.Cloud(p, pb, vec, L)                                             # Gamma computation.
 
     # A Generalized Finite Differences Method
-    while err >= tol:                                                               # As long as the error is greater than the tolerance.
+    while err >= tol and iter <= m_it:                                              # Check for iterations and tolerance.
         err = 0                                                                     # Error becomes zero to be able to update.
         for i in np.arange(mf, m):                                                  # For each of the interior nodes.
             utemp = 0                                                               # utemp is initialized with zero.
@@ -135,6 +140,7 @@ def Triangulation(p, pb, tt, phi, f):
             t = (f(p[i, 0], p[i, 1]) - utemp)/Gamma[i,0]                            # The central node is added to the approximation.
             err = max(err, abs(t - u_ap[i]));                                       # Error computation.
             u_ap[i] = t;                                                            # The previously computed value is assigned.
+        iter += 1                                                                   # 1 is added to the number of iterations.
     
     # Theoretical Solution
     for i in range(m):                                                              # For all the nodes.
@@ -165,7 +171,9 @@ def Cloud(p, pb, phi, f):
     m    = len(p[:,0])                                                              # The total number of nodes is calculated.
     mf   = len(pb[:,0])                                                             # The number of boundary nodes is calculated.
     err  = 1                                                                        # err initialization in 1.
-    tol  = 1e-8                                                                     # The tolerance is defined.
+    iter = 0                                                                        # Number of iterations.
+    tol  = 1e-6                                                                     # The tolerance is defined.
+    m_it = 200                                                                      # Maximum number of iterations.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
 
@@ -181,7 +189,7 @@ def Cloud(p, pb, phi, f):
     Gamma = Gammas.Cloud(p, pb, vec, L)                                             # Gamma computation.
 
     # A Generalized Finite Differences Method
-    while err >= tol:                                                               # As long as the error is greater than the tolerance.
+    while err >= tol and iter <= m_it:                                              # Check for iterations and tolerance.
         err = 0                                                                     # Error becomes zero to be able to update.
         for i in np.arange(mf, m):                                                  # For each of the interior nodes.
             utemp = 0                                                               # utemp is initialized with zero.
@@ -191,6 +199,7 @@ def Cloud(p, pb, phi, f):
             t = (f(p[i, 0], p[i, 1]) - utemp)/Gamma[i,0]                            # The central node is added to the approximation.
             err = max(err, abs(t - u_ap[i]));                                       # Error computation.
             u_ap[i] = t;                                                            # The previously computed value is assigned.
+        iter += 1                                                                   # 1 is added to the number of iterations.
     
     # Theoretical Solution
     for i in range(m):                                                              # For all the nodes.
