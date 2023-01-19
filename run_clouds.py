@@ -39,7 +39,6 @@ for reg in regions:
         # Node data is saved
         p   = mat['p']
         pb  = mat['pb']
-        vec = mat['vec']
         tt  = mat['t']
         if tt.min() == 1:
             tt -= 1
