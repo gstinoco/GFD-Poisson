@@ -13,6 +13,7 @@ CHA:
 CUAD:
     The mean square error in the unstructured cloud of points CUAD with size 1 is:	0.0023122080089400146
 	The mean square error in the unstructured cloud of points CUAD with size 2 is:  3.159742703348345e-05
+	The mean square error in the unstructured cloud of points CUAD with size 3 is:	3.001687967882489e-06
 
 CUIT:
 	The mean square error in the unstructured cloud of points CUIT with size 1 is:	0.0032086713980473236
