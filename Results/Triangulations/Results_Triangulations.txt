@@ -13,6 +13,7 @@ CHA:
 CUAD:
 	The mean square error in the triangulation CUAD with size 1 is: 				0.00038553489469270543
 	The mean square error in the triangulation CUAD with size 2 is:					3.747663992617343e-05
+	The mean square error in the triangulation CUAD with size 3 is:					3.5676166127503095e-06
 
 
 CUIT:
