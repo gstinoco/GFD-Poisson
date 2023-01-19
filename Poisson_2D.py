@@ -44,7 +44,7 @@ def Mesh(x, y, phi, f):
     m    = me[0]                                                                    # The number of nodes in x.
     n    = me[1]                                                                    # The number of nodes in y.
     err  = 1                                                                        # err initialization in 1.
-    tol  = np.finfo(float).eps                                                      # The tolerance is defined as eps
+    tol  = 1e-8                                                                     # The tolerance is defined.
     u_ap = np.zeros([m,n])                                                          # u_ap initialization with zeros.
     u_ex = np.zeros([m,n])                                                          # u_ex initialization with zeros.
 
@@ -109,7 +109,7 @@ def Triangulation(p, pb, tt, phi, f):
     mf   = len(pb[:,0])                                                             # The number of boundary nodes is calculated.
     nvec = 9                                                                        # The maximum number of nodes.
     err  = 1                                                                        # err initialization in 1.
-    tol  = np.finfo(float).eps                                                      # The tolerance is defined as eps
+    tol  = 1e-8                                                                     # The tolerance is defined.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
     
@@ -165,7 +165,7 @@ def Cloud(p, pb, phi, f):
     m    = len(p[:,0])                                                              # The total number of nodes is calculated.
     mf   = len(pb[:,0])                                                             # The number of boundary nodes is calculated.
     err  = 1                                                                        # err initialization in 1.
-    tol  = np.finfo(float).eps                                                      # The tolerance is defined as eps
+    tol  = 1e-8                                                                     # The tolerance is defined.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
 
