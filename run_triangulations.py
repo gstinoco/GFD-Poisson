@@ -23,7 +23,7 @@ import Poisson_2D
 # Region data is loaded.
 # Triangulation to work in.
 
-regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','SWA','ZIRA']
+regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','SWA','ZIR']
 sizes = ['1', '2', '3']
 
 for reg in regions:
@@ -39,7 +39,6 @@ for reg in regions:
         # Node data is saved
         p   = mat['p']
         pb  = mat['pb']
-        vec = mat['vec']
         tt  = mat['t']
         if tt.min() == 1:
             tt -= 1

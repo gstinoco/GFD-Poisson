@@ -22,7 +22,7 @@ import Poisson_2D
 
 # Region data is loaded.
 
-regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','SWA','ZIRA']
+regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','SWA','ZIR']
 sizes = ['21', '41','81']
 
 for reg in regions:

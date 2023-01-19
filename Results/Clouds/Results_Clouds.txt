@@ -1,98 +1,33 @@
 CAB:
-	The mean square error in the unstructured cloud of points CAB with size 1 is:	0.0004428205347785127
-	The mean square error in the unstructured cloud of points CAB with size 2 is:	5.867645664096162e-05
-	The mean square error in the unstructured cloud of points CAB with size 3 is:	6.0162346083127265e-06
-	The mean square error in the unstructured cloud of points CAB with size 4 is: 	1.6451932709250117e-06
+	The mean square error in the unstructured cloud of points CAB with size 1 is:	0.0008355180419689722
+	The mean square error in the unstructured cloud of points CAB with size 2 is:	0.00011067716430360236
+	The mean square error in the unstructured cloud of points CAB with size 3 is:	1.2797412766976787e-05
 
-CHA:
-	The mean square error in the unstructured cloud of points CHA with size 1 is:	7.947240460827663e-05
-	The mean square error in the unstructured cloud of points CHA with size 2 is:	1.0113033395785577e-05
-	The mean square error in the unstructured cloud of points CHA with size 3 is:	1.0454573009920563e-06
-	The mean square error in the unstructured cloud of points CHA with size 4 is:	1.0534146052735278e-07
+CUA:
 
-CUAD:
-    The mean square error in the unstructured cloud of points CUAD with size 1 is:	0.0023122080089400146
-	The mean square error in the unstructured cloud of points CUAD with size 2 is:  3.159742703348345e-05
-	The mean square error in the unstructured cloud of points CUAD with size 3 is:	3.001687967882489e-06
 
-CUIT:
-	The mean square error in the unstructured cloud of points CUIT with size 1 is:	0.0032086713980473236
-	The mean square error in the unstructured cloud of points CUIT with size 2 is:	0.0003966157781095352
-	The mean square error in the unstructured cloud of points CUIT with size 3 is:	5.431991747618702e-05
-	The mean square error in the unstructured cloud of points CUIT with size 4 is:	5.4861864387473704e-06
+CUI:
 
-CURVA:
-	The mean square error in the unstructured cloud of points CURVA with size 1 is:	0.0007686077330025032
-	The mean square error in the unstructured cloud of points CURVA with size 2 is:	0.00011008856446321497
-	The mean square error in the unstructured cloud of points CURVA with size 3 is:	1.2541050466219673e-05
-	The mean square error in the unstructured cloud of points CURVA with size 4 is:	1.248477553737974e-06
 
-DOWN:
-	The mean square error in the unstructured cloud of points DOWN with size 1 is:	2.4690990051289645e-05
-	The mean square error in the unstructured cloud of points DOWN with size 2 is:	3.146129175341277e-06
-	The mean square error in the unstructured cloud of points DOWN with size 3 is:	3.2727686997131425e-07
-	The mean square error in the unstructured cloud of points DOWN with size 4 is:  6.796188959519711e-08
+DOW:
 
-ELE:
-	The mean square error in the unstructured cloud of points ELE with size 1 is:	0.00029753288544124185
-	The mean square error in the unstructured cloud of points ELE with size 2 is:	3.229890801316246e-05
-	The mean square error in the unstructured cloud of points ELE with size 3 is:	1.1749045079245957e-05
-	The mean square error in the unstructured cloud of points ELE with size 4 is:	4.310481641823319e-07
 
 ENG:
-	The mean square error in the unstructured cloud of points ENG with size 1 is:	7.634869561497873e-05
-	The mean square error in the unstructured cloud of points ENG with size 2 is:	1.1214411094858228e-05
-	The mean square error in the unstructured cloud of points ENG with size 3 is:	1.7092661739547886e-06
-	The mean square error in the unstructured cloud of points ENG with size 4 is:	1.8085011037907682e-07
 
-GIBR:
-	The mean square error in the unstructured cloud of points GIBR with size 1 is:	7.834579174118684e-05
-	The mean square error in the unstructured cloud of points GIBR with size 2 is: 	8.723226806104714e-06
-	The mean square error in the unstructured cloud of points GIBR with size 3 is:	1.0181876993951877e-06
-	The mean square error in the unstructured cloud of points GIBR with size 4 is:	5.747912023708233e-07
 
-HA:
-	The mean square error in the unstructured cloud of points HA with size 1 is:	0.000612899734922954
-	The mean square error in the unstructured cloud of points HA with size 2 is:	8.297759995566059e-05
-	The mean square error in the unstructured cloud of points HA with size 3 is:	8.83107678760159e-06
-	The mean square error in the unstructured cloud of points HA with size 4 is:	9.493105349638571e-07
+GIB:
+
 
 HAB:
-	The mean square error in the unstructured cloud of points HAB with size 1 is:	0.0006042153650903148
-	The mean square error in the unstructured cloud of points HAB with size 2 is:	0.0001504183588936998
-	The mean square error in the unstructured cloud of points HAB with size 3 is:	1.8562065808699347e-05
-	The mean square error in the unstructured cloud of points HAB with size 4 is:	1.8022218322107523e-06
 
-MI:
-	The mean square error in the unstructured cloud of points MI with size 1 is:	0.0002152755687944208
-	The mean square error in the unstructured cloud of points MI with size 2 is:	2.616060060950414e-05
-	The mean square error in the unstructured cloud of points MI with size 3 is:	2.70569515468248e-06
 
 MIC:
 
 
-MID:
-
-
-PATZ:
+PAT:
 
 
 SWA:
 
 
-TERRA:
-
-
-TRAP:
-
-
-UC:
-
-
-UCH:
-
-
-UP:
-
-
-ZIRA:
+ZIR:
