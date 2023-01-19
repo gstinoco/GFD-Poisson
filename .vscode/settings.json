@@ -10,5 +10,6 @@
         "regiones",
         "savefig",
         "ZIRA"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "basic"
 }
