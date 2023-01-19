@@ -44,7 +44,7 @@ def Mesh(x, y, phi, f):
     m    = me[0]                                                                    # The number of nodes in x.
     n    = me[1]                                                                    # The number of nodes in y.
     err  = 1                                                                        # err initialization in 1.
-    tol  = 1e-8                                                                     # The tolerance is defined.
+    tol  = 1e-6                                                                     # The tolerance is defined.
     u_ap = np.zeros([m,n])                                                          # u_ap initialization with zeros.
     u_ex = np.zeros([m,n])                                                          # u_ex initialization with zeros.
 
