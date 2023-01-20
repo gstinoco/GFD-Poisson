@@ -4,7 +4,8 @@ CAB:
 	The mean square error in the unstructured cloud of points CAB with size 3 is:	1.2797412766976787e-05
 
 CUA:
-
+	The mean square error in the unstructured cloud of points CUA with size 1 is:	0.0023122080089390097
+	The mean square error in the unstructured cloud of points CUA with size 2 is:	3.159742703340489e-05
 
 CUI:
 

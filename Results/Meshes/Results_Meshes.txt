@@ -1,14 +1,22 @@
 CAB:
-
+	The mean square error in the mesh CAB with 21 points per side is:	0.0019888002252494152
+	The mean square error in the mesh CAB with 41 points per side is:	0.0004662230015116261
+	The mean square error in the mesh CAB with 81 points per side is:	0.00011468942234026672
 
 CUA:
-
+	The mean square error in the mesh CUA with 21 points per side is:	0.006460999176166152
+	The mean square error in the mesh CUA with 41 points per side is:	0.0016120202743226772
+	The mean square error in the mesh CUA with 81 points per side is:	0.0004028023450299782
 
 CUI:
-
+	The mean square error in the mesh CUI with 21 points per side is:	0.01068079195567049
+	The mean square error in the mesh CUI with 41 points per side is:	0.0027248678898727087
+	The mean square error in the mesh CUI with 81 points per side is:	0.0006823021944496096
 
 DOW:
-
+	The mean square error in the mesh DOW with 21 points per side is:	0.0038442614405445512
+	The mean square error in the mesh DOW with 41 points per side is:	0.0010713300076134577
+	The mean square error in the mesh DOW with 81 points per side is:	0.0002750661539088833
 
 ENG:
 
@@ -26,6 +34,12 @@ PAT:
 
 
 SWA:
-
+	The mean square error in the mesh SWA with 21 points per side is:	0.011093789546577042
+	The mean square error in the mesh SWA with 41 points per side is:	0.002751597144475708
+	The mean square error in the mesh SWA with 81 points per side is:	0.0007054289441037827
 
 ZIR:
+	The mean square error in the mesh ZIR with 21 points per side is:	0.002743447568045765
+	The mean square error in the mesh ZIR with 41 points per side is:	0.0006892063758693404
+	The mean square error in the mesh ZIR with 81 points per side is:	0.0001545614069038902
+	
