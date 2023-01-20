@@ -67,7 +67,7 @@ def Mesh(x, y, phi, f):
         err = 0                                                                     # Error becomes zero to be able to update.
         for i in range(1,m-1):                                                      # For each of the nodes on the x axis.
             for j in range(1,n-1):                                                  # For each of the nodes on the y axis.
-                t = (f(x[i, j], y[i, j]) - (              \
+                t = (f(x[i, j], y[i, j]) - (            \
                     Gamma[i, j, 1]*u_ap[i + 1, j    ] + \
                     Gamma[i, j, 2]*u_ap[i + 1, j + 1] + \
                     Gamma[i, j, 3]*u_ap[i    , j + 1] + \
