@@ -51,7 +51,7 @@ def Mesh(x, y, L):
             M = np.linalg.pinv(M)                                                   # The pseudoinverse of matrix M.
             YY = M@L                                                                # M*L computation.
             Gem = np.vstack([-sum(YY), YY])                                         # Gamma values are found.
-            for k in np.arange(9):                                                  # For each of the Gamma values.
+            for k in range(9):                                                      # For each of the Gamma values.
                 Gamma[i,j,k] = Gem[k]                                               # The Gamma value is stored.
 
     return Gamma
