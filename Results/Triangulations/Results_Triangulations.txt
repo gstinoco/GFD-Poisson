@@ -1,10 +1,8 @@
 CAB:
-	The mean square error in the triangulation CAB with size 1 is:	0.000832743644188321
-	The mean square error in the triangulation CAB with size 2 is:	0.00010904888977230838
-	The mean square error in the triangulation CAB with size 3 is:	1.2026334119816487e-05
+	
 
 CUA:
-	The mean square error in the triangulation CUA with size 1 is:	0.00038553489469009934
+	
 
 CUI:
 
