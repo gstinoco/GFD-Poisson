@@ -42,7 +42,7 @@ All the codes presented were developed by:
     https://orcid.org/0000-0002-9309-9390
 
 ## References :books:
-More details on the Methods presented in these codes can be found in the following [Jupyter Notebook](https://github.com/gstinoco/GFD-Poisson/blob/Python/Poisson_2D.py)
+More details on the Methods presented in these codes can be found in the following [Jupyter Notebook](Poisson_2D.ipynb)
   
 
 ## Funding :dollar:
