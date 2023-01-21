@@ -1,31 +1,54 @@
 CAB:
-	
+    The mean square error in the triangulation CAB with size 1 is:  0.00011109211091553133
+    The mean square error in the triangulation CAB with size 2 is:  1.379420710577502e-05
+    The mean square error in the triangulation CAB with size 3 is:  1.2862807344853241e-06
 
 CUA:
-	
+    The mean square error in the triangulation CUA with size 1 is:  0.00038553489469009934
+    The mean square error in the triangulation CUA with size 2 is:  3.747663992723283e-05
+    The mean square error in the triangulation CUA with size 3 is:  3.5676166128676413e-06
 
 CUI:
-
+    The mean square error in the triangulation CUI with size 1 is:  0.00025607126408797726
+    The mean square error in the triangulation CUI with size 2 is:  3.9274699495606034e-05
+    The mean square error in the triangulation CUI with size 3 is:  4.8872918405824925e-06
 
 DOW:
-
+    The mean square error in the triangulation DOW with size 1 is:  5.363267360147678e-05
+    The mean square error in the triangulation DOW with size 2 is:  6.708106485782265e-06
+    The mean square error in the triangulation DOW with size 3 is:  7.181051455880486e-07
 
 ENG:
-
+    The mean square error in the triangulation ENG with size 1 is:  0.1912026167165296
+    The mean square error in the triangulation ENG with size 2 is:  1.7237528766726853e-05
+    The mean square error in the triangulation ENG with size 3 is:  1.9637436469170475e-06
 
 GIB:
-
+    The mean square error in the triangulation GIB with size 1 is:  0.0004224053616233113
+    The mean square error in the triangulation GIB with size 2 is:  6.35770017175508e-05
+    The mean square error in the triangulation GIB with size 3 is:  7.488363502409841e-06
 
 HAB:
-
+    The mean square error in the triangulation HAB with size 1 is:  0.00047813936253403365
+    The mean square error in the triangulation HAB with size 2 is:  8.642481065006904e-05
+    The mean square error in the triangulation HAB with size 3 is:  8.391574804473614e-06
 
 MIC:
-
+    The mean square error in the triangulation MIC with size 1 is:  0.0003605527698343376
+    The mean square error in the triangulation MIC with size 2 is:  0.0001326165004877923
+    The mean square error in the triangulation MIC with size 3 is:  1.3792483676636108e-05
 
 PAT:
-
+    The mean square error in the triangulation PAT with size 1 is:  0.0002909086532105675
+    The mean square error in the triangulation PAT with size 2 is:  4.4938147240554075e-05
+    The mean square error in the triangulation PAT with size 3 is:  5.42269786651553e-06
 
 SWA:
-
+    The mean square error in the triangulation SWA with size 1 is:  9.087223755043633e-05
+    The mean square error in the triangulation SWA with size 2 is:  1.4765041084117664e-05
+    The mean square error in the triangulation SWA with size 3 is:  1.6254039295096518e-06
 
 ZIR:
+    The mean square error in the triangulation ZIR with size 1 is:  0.0003932099661377054
+    The mean square error in the triangulation ZIR with size 2 is:  4.515238833580816e-05
+    The mean square error in the triangulation ZIR with size 3 is:  5.550662231500299e-06
