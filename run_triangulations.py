@@ -16,8 +16,8 @@
 
 import math
 from scipy.io import loadmat
-import Errors
-import Graph
+import Scripts.Errors as Errors
+import Scripts.Graph as Graph
 import Poisson_2D
 
 # Region data is loaded.
@@ -61,4 +61,5 @@ for reg in regions:
         phi_ap, phi_ex, vec = Poisson_2D.Triangulation(p, pb, tt, phi, f)
         er = Errors.Cloud_Static(p, vec, phi_ap, phi_ex)
         print('The mean square error in the triangulation', region, 'with size', cloud, 'is: ', er)
-        Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomt)
+        #Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomt)
+        Graph.Cloud_Static(p, tt, phi_ap, phi_ex)

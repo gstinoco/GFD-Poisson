@@ -16,8 +16,8 @@
 
 import math
 from scipy.io import loadmat
-import Errors
-import Graph
+import Scripts.Errors as Errors
+import Scripts.Graph as Graph
 import Poisson_2D
 
 # Region data is loaded.
@@ -58,4 +58,5 @@ for reg in regions:
         phi_ap, phi_ex = Poisson_2D.Mesh(x, y, phi, f)
         er = Errors.Mesh_Static(x, y, phi_ap, phi_ex)
         print('The mean square error in the mesh', region, 'with', mesh, 'points per side is: ', er)
-        Graph.Mesh_Static_sav(x, y, phi_ap, phi_ex, nomm)
+        #Graph.Mesh_Static_sav(x, y, phi_ap, phi_ex, nomm)
+        Graph.Mesh_Static(x, y, phi_ap, phi_ex)

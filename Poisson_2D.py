@@ -16,9 +16,8 @@
 
 import numpy as np
 from sys import path
-path.insert(0, 'General/')
-import Gammas
-import Neighbors
+import Scripts.Gammas as Gammas
+import Scripts.Neighbors as Neighbors
 
 def Mesh(x, y, phi, f):
     # 2D Poisson Equation implemented in Logically Rectangular Meshes.
