@@ -15,6 +15,7 @@
 #   January, 2023.
 
 from scipy.io import loadmat
+import numpy as np
 import Scripts.Errors as Errors
 import Scripts.Graph as Graph
 import Poisson_2D
