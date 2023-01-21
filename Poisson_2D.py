@@ -15,7 +15,6 @@
 #   December, 2022.
 
 import numpy as np
-from sys import path
 import Scripts.Gammas as Gammas
 import Scripts.Neighbors as Neighbors
 
