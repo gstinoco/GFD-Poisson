@@ -15,7 +15,6 @@
 #   December, 2022.
 
 import numpy as np
-import math
  
 def Mesh(x, y, L):
     # 2D Meshes Gammas Computation.

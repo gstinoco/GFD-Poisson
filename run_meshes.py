@@ -14,7 +14,6 @@
 # Last Modification:
 #   January, 2023.
 
-import math
 from scipy.io import loadmat
 import Scripts.Errors as Errors
 import Scripts.Graph as Graph
@@ -23,7 +22,6 @@ import Poisson_2D
 # Region data is loaded.
 
 regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','SWA','ZIR']
-#regions = ['ENG','GIB','HAB','MIC','PAT']
 sizes = ['21', '41','81']
 
 for reg in regions:
@@ -47,11 +45,11 @@ for reg in regions:
         #   f = 10e^{2x+y}
 
         def phi(x,y):
-            fun = 2*math.exp(2*x+y)
+            fun = 2*np.exp(2*x+y)
             return fun
 
         def f(x,y):
-            fun = 10*math.exp(2*x+y)
+            fun = 10*np.exp(2*x+y)
             return fun
 
         # Poisson 2D computed in a logically rectangular mesh
