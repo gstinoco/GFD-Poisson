@@ -3,8 +3,17 @@ Generalized Finite Differences Methods for numerically solve Poisson Equation on
 
 All the codes are distributed under MIT License on [GitHub](https://github.com/gstinoco/GFD-Poisson) and are free to use, modify, and distribute giving the proper copyright notice.
 
-## Description :memo:
+![Approximate and Theoretical solutions of the problem on ENG region](https://github.com/gstinoco/GFD-Poisson/blob/Python/Results/Clouds/ENG_3.png)
 
+## Description :memo:
+This repository proposes a way to make an approximation to the Poisson Equation in two dimensions over regions that can range from regular (CUA) to highly irregular (ENG).
+
+For this, the proposed solution uses a Generalized Finite Differences Method for the numerical solution over all the regions on:
+	1. Logically Rectangular Meshes.
+	2. Triangulations.
+	3. Irregular clouds of points.
+
+It is possible to find all test data in the "Data" folder and some sample results in the "Results" folder.
 
 ## Researchers :scientist:
 All the codes presented were developed by:
