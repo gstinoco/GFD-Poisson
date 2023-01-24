@@ -13,7 +13,10 @@ For this, the proposed solution uses a Generalized Finite Differences Method for
 2. Triangulations.
 3. Irregular clouds of points.
 
-<center><img src="/Notebook_Figures/fig01.png" alt="Cuitzeo Lake region" width="240" height="240"/><img src="/Notebook_Figures/fig02.png" alt="Cuitzeo Lake structured mesh" width="240" height="240"/></center>
+Cuitzeo Lake Region                 | Cuitzeo Lake structured grid
+:----------------------------------:|:------------------------------:
+![](/Notebook_Figures/fig01.png]    |![](/Notebook_Figures/fig02.png]
+
 
 <center><img src="/Notebook_Figures/fig03.png" alt="Cuitzeo Lake traingulation" width="240" height="240"/><img src="/Notebook_Figures/fig04.png" alt="Cuitzeo Lake cloud of points" width="240" height="240"/></center>
 
