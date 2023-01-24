@@ -105,6 +105,6 @@ def Cloud_Static(p, vec, u_ap, u_ex):
     for i in np.arange(m):                                                          # For each of the nodes.
         er = er + area[i]*(u_ap[i] - u_ex[i])**2                                    # Mean square error computation.
 
-    er = np.sqrt(er)                                                              # The square root is computed.
+    er = np.sqrt(er)                                                                # The square root is computed.
     
     return er

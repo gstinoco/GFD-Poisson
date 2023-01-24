@@ -142,7 +142,7 @@ def Triangulation(p, pb, tt, phi, f):
     
     # Theoretical Solution
     for i in range(m):                                                              # For all the nodes.
-        u_ex[i] = phi(p[i,0], p[i,1])                                             # The theoretical solution is computed.
+        u_ex[i] = phi(p[i,0], p[i,1])                                               # The theoretical solution is computed.
 
     return u_ap, u_ex, vec
 

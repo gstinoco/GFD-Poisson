@@ -41,8 +41,8 @@ def Triangulation(p, tt, nvec):
         vec2 = np.vstack([vec2])                                                    # Convert vec2 to a column.
         nvec2 = sum(vec2[0,:] != -1)                                                # The number of neighbors of the node is calculated.
         nnvec = np.minimum(nvec, nvec2)
-        for j in np.arange(nnvec):                                                   # For each of the nodes.
-            vec[i,j] = vec2[0,j]                                                    # Neighbors are saved.   
+        for j in np.arange(nnvec):                                                  # For each of the nodes.
+            vec[i,j] = vec2[0,j]                                                    # Neighbors are saved.
     return vec
 
 def Cloud(p, pb, nvec):

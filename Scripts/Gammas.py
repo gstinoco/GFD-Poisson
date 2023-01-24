@@ -67,7 +67,7 @@ def Cloud(p, pb, vec, L):
     #   L           5 x 1           Array           Array with the values of the differential operator.
     # 
     # Output parameters
-    #   Gamma       m x n x 9       Array           Array with the computed gamma values.
+    #   Gamma       m x n x o       Array           Array with the computed gamma values.
 
     nvec  = len(vec[:,1])                                                           # The maximum number of neighbors.
     m     = len(p[:,0])                                                             # The total number of nodes.
