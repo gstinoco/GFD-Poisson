@@ -15,10 +15,11 @@ For this, the proposed solution uses a Generalized Finite Differences Method for
 
 Cuitzeo Lake Region                 | Cuitzeo Lake structured grid
 :----------------------------------:|:------------------------------:
-![](/Notebook_Figures/fig01.png]    |![](/Notebook_Figures/fig02.png]
-
-
-<center><img src="/Notebook_Figures/fig03.png" alt="Cuitzeo Lake traingulation" width="240" height="240"/><img src="/Notebook_Figures/fig04.png" alt="Cuitzeo Lake cloud of points" width="240" height="240"/></center>
+![](/Notebook_Figures/fig01.png)    |![](/Notebook_Figures/fig02.png)
+:----------------------------------:|:------------------------------:
+Cuitzeo Lake Triangulation          | Cuitzeo Lake Cloud of points
+:----------------------------------:|:------------------------------:
+![](/Notebook_Figures/fig03.png)    |![](/Notebook_Figures/fig04.png)
 
 
 It is possible to find all test data in the "Data" folder and some sample results in the "Results" folder.
