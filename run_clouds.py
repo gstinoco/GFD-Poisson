@@ -14,7 +14,7 @@
 # Last Modification:
 #   January, 2023.
 
-import math
+import numpy as np
 from scipy.io import loadmat
 import Scripts.Errors as Errors
 import Scripts.Graph as Graph
@@ -50,11 +50,11 @@ for reg in regions:
         #   f = 10e^{2x+y}
 
         def phi(x,y):
-            fun = 2*math.exp(2*x+y)
+            fun = 2*np.exp(2*x+y)
             return fun
 
         def f(x,y):
-            fun = 10*math.exp(2*x+y)
+            fun = 10*np.exp(2*x+y)
             return fun
 
         # Poisson 2D computed in an unstructured cloud of points
