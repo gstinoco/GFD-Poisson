@@ -69,10 +69,10 @@ def Cloud(p, pb, vec, L):
     # Output parameters
     #   Gamma       m x n x o       Array           Array with the computed gamma values.
 
-    nvec  = len(vec[:,1])                                                           # The maximum number of neighbors.
+    nvec  = len(vec[0,:])                                                           # The maximum number of neighbors.
     m     = len(p[:,0])                                                             # The total number of nodes.
     mf    = len(pb[:,0])                                                            # The number of nodes in the boundary.
-    Gamma = np.zeros([m, nvec])                                                     # Gamma initialization with zeros.
+    Gamma = np.zeros([m, nvec+1])                                                   # Gamma initialization with zeros.
 
     for i in np.arange(mf, m):                                                      # For each of the inner nodes.
         nvec = sum(vec[i,:] != -1)                                                  # The total number of neighbors of the node.
