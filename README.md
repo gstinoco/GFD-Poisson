@@ -16,9 +16,7 @@ For this, the proposed solution uses a Generalized Finite Differences Method for
 Cuitzeo Lake Region                 | Cuitzeo Lake structured grid
 :----------------------------------:|:------------------------------:
 ![](/Notebook_Figures/fig01.png)    |![](/Notebook_Figures/fig02.png)
-:----------------------------------:|:------------------------------:
 Cuitzeo Lake Triangulation          | Cuitzeo Lake Cloud of points
-:----------------------------------:|:------------------------------:
 ![](/Notebook_Figures/fig03.png)    |![](/Notebook_Figures/fig04.png)
 
 
