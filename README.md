@@ -13,6 +13,11 @@ For this, the proposed solution uses a Generalized Finite Differences Method for
 2. Triangulations.
 3. Irregular clouds of points.
 
+![CUI region](/Notebook_Figures/fig01.png)
+![CUI region, structured mesh](/Notebook_Figures/fig02.png)
+![CUI region, triangulation](/Notebook_Figures/fig03.png)
+![CUI region, cloud of points](/Notebook_Figures/fig04.png)
+
 It is possible to find all test data in the "Data" folder and some sample results in the "Results" folder.
 
 ## Researchers :scientist:
@@ -41,7 +46,7 @@ All the codes presented were developed by:
     jose.alberto.guzman@umich.mx<br>
     https://orcid.org/0000-0002-9309-9390
 
-## References :books:
+## Details :books:
 More details on the Methods presented in these codes can be found in the following [Jupyter Notebook](Poisson_2D.ipynb)
   
 
