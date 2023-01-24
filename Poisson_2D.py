@@ -168,6 +168,7 @@ def Cloud(p, pb, phi, f):
     # Variable initialization
     m    = len(p[:,0])                                                              # The total number of nodes is calculated.
     mf   = len(pb[:,0])                                                             # The number of boundary nodes is calculated.
+    nvec = 8                                                                        # The maximum number of nodes.
     err  = 1                                                                        # err initialization in 1.
     iter = 0                                                                        # Number of iterations.
     tol  = 1e-16                                                                    # The tolerance is defined.
@@ -180,7 +181,7 @@ def Cloud(p, pb, phi, f):
         u_ap[i] = phi(pb[i, 0],   pb[i, 1])                                         # The boundary condition is assigned.
     
     # Neighbor search for all the nodes.
-    vec = Neighbors.Cloud(p, pb, 8)                                                 # Neighbor search with the proper routine.
+    vec = Neighbors.Cloud(p, pb, nvec)                                              # Neighbor search with the proper routine.
 
     # Computation of Gamma values
     L = np.vstack([[0], [0], [2], [0], [2]])                                        # The values of the differential operator are assigned.
