@@ -13,10 +13,10 @@ For this, the proposed solution uses a Generalized Finite Differences Method for
 2. Triangulations.
 3. Irregular clouds of points.
 
-![CUI region](/Notebook_Figures/fig01.png)
-![CUI region, structured mesh](/Notebook_Figures/fig02.png)
-![CUI region, triangulation](/Notebook_Figures/fig03.png)
-![CUI region, cloud of points](/Notebook_Figures/fig04.png)
+<center><img src="/Notebook_Figures/fig01.png" alt="Cuitzeo Lake region" width="240" height="240"/><img src="/Notebook_Figures/fig02.png" alt="Cuitzeo Lake structured mesh" width="240" height="240"/></center>
+
+<center><img src="/Notebook_Figures/fig03.png" alt="Cuitzeo Lake traingulation" width="240" height="240"/><img src="/Notebook_Figures/fig04.png" alt="Cuitzeo Lake cloud of points" width="240" height="240"/></center>
+
 
 It is possible to find all test data in the "Data" folder and some sample results in the "Results" folder.
 
