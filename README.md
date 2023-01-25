@@ -13,11 +13,11 @@ For this, the proposed solution uses a Generalized Finite Differences Method for
 2. Triangulations.
 3. Irregular clouds of points.
 
-Cuitzeo Lake Region                 | Cuitzeo Lake structured grid
-:----------------------------------:|:------------------------------:
-![](/Notebook_Figures/fig01.png)    |![](/Notebook_Figures/fig02.png)
-Cuitzeo Lake Triangulation          | Cuitzeo Lake Cloud of points
-![](/Notebook_Figures/fig03.png)    |![](/Notebook_Figures/fig04.png)
+Cuitzeo Lake Region                                           | Cuitzeo Lake Structured Grid
+:------------------------------------------------------------:|:------------------------------------------------------------:
+![Cuitzeo Lake Region](/Notebook_Figures/fig01.png)           | ![Cuitzeo Lake Structured Grid](/Notebook_Figures/fig02.png)
+Cuitzeo Lake Triangulation                                    | Cuitzeo Lake Cloud of Points
+![Cuitzeo Lake Triangulation](/Notebook_Figures/fig03.png)    | ![Cuitzeo Lake Cloud of Points](/Notebook_Figures/fig04.png)
 
 
 It is possible to find all test data in the "Data" folder and some sample results in the "Results" folder.
@@ -47,6 +47,17 @@ All the codes presented were developed by:
     Aula CIMNE-Morelia<br>
     jose.alberto.guzman@umich.mx<br>
     https://orcid.org/0000-0002-9309-9390
+
+## Students :man_student: :woman_student:
+  - Heriberto Arias Rojas<br>
+    Universidad Michoacana de San Nicolás de Hidalgo<br>
+    heriberto.arias@umich.mx<br>
+    https://orcid.org/0000-0002-7641-8310
+
+  - Ricardo Román Gutiérrez<br>
+    Universidad Michoacana de San Nicolás de Hidalgo<br>
+    ricardo.roman@umich.mx<br>
+    https://orcid.org/0000-0001-8521-9391
 
 ## Details :books:
 More details on the Methods presented in these codes can be found in the following [Jupyter Notebook](Poisson_2D.ipynb)
