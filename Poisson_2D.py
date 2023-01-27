@@ -109,8 +109,8 @@ def Triangulation(p, tt, phi, f):
     nvec = 8                                                                        # The maximum number of nodes.
     err  = 1                                                                        # err initialization in 1.
     iter = 0                                                                        # Number of iterations.
-    tol  = 1e-8                                                                     # The tolerance is defined.
-    m_it = 10000                                                                    # Maximum number of iterations.
+    tol  = 1e-10                                                                     # The tolerance is defined.
+    m_it = 40000                                                                    # Maximum number of iterations.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
     
@@ -169,8 +169,8 @@ def Cloud(p, phi, f):
     nvec = 8                                                                        # The maximum number of nodes.
     err  = 1                                                                        # err initialization in 1.
     iter = 0                                                                        # Number of iterations.
-    tol  = 1e-8                                                                     # The tolerance is defined.
-    m_it = 10000                                                                    # Maximum number of iterations.
+    tol  = 1e-10                                                                     # The tolerance is defined.
+    m_it = 40000                                                                    # Maximum number of iterations.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
 
