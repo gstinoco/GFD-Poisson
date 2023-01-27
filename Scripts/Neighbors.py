@@ -36,22 +36,21 @@ def Triangulation(p, tt, nvec):
 
     # Neighbor search
     for i in np.arange(m):                                                          # For each of the nodes.
-        kn   = np.argwhere(tt == i)                                                 # Search in which triangles the node appears.
-        vec2 = np.setdiff1d(tt[kn[:,0]], i)                                         # Neighbors are stored inside vec2.
-        vec2 = np.vstack([vec2])                                                    # Convert vec2 to a column.
+        kn    = np.argwhere(tt == i)                                                # Search in which triangles the node appears.
+        vec2  = np.setdiff1d(tt[kn[:,0]], i)                                        # Neighbors are stored inside vec2.
+        vec2  = np.vstack([vec2])                                                   # Convert vec2 to a column.
         nvec2 = sum(vec2[0,:] != -1)                                                # The number of neighbors of the node is calculated.
         nnvec = np.minimum(nvec, nvec2)
         for j in np.arange(nnvec):                                                  # For each of the nodes.
             vec[i,j] = vec2[0,j]                                                    # Neighbors are saved.
     return vec
 
-def Cloud(p, pb, nvec):
+def Cloud(p, nvec):
     # Clouds
     # Routine to find the neighbor nodes in a cloud of points generated with dmsh on Python.
     #
     # Input parameters
-    #   p           m x 2           double          Array with the coordinates of the nodes.
-    #   pm          m x 2           double          Array with the coordinates of the boundary nodes.
+    #   p           m x 3           Array           Array with the coordinates of the nodes and a flag for the boundary.
     #   nvec                        integer         Maximum number of neighbors.
     # 
     # Output parameters
@@ -59,18 +58,19 @@ def Cloud(p, pb, nvec):
 
     # Variable initialization
     m    = len(p[:,0])                                                              # The size if the triangulation is obtained.
-    vec  = np.zeros([m, nvec], dtype=int)-1                                         # The array for the neighbors is initialized.
-    dist = 0                                                                        # Maximum distance between the boundary nodes.
+    vec  = np.zeros([m, nvec], dtype=int) - 1                                       # The array for the neighbors is initialized.
+    dmin = np.zeros([m, 1]) + 1
 
-    # Search for the maximum distance between the boundary nodes
-    xb = pb[:,0]                                                                    # x coordinates of the boundary nodes.
-    yb = pb[:,1]                                                                    # y coordinates of the boundary nodes.
-    m2 = len(xb)                                                                    # Total number of boundary nodes.
-    for i in np.arange(m2-1):
-        d    = np.sqrt((xb[i] - xb[i+1])**2 + (yb[i] - yb[i+1])**2)                 # The distance between a boundary node and the next one.
-        dist = max(dist,d)                                                          # Maximum distance search.
-    d    = np.sqrt((xb[m2-1] - xb[0])**2 + (yb[m2-1] - yb[0])**2)                   # The distance between the last and the first boundary nodes.
-    dist = (8/7)*max(dist,d)                                                        # Maximum distance search.
+    for i in np.arange(m):
+        x    = p[i,0]                                                               # x coordinate of the central node.
+        y    = p[i,1]                                                               # y coordinate of the central node.
+        for j in np.arange(m):
+            if i != j:
+                x1 = p[j,0]                                                         # x coordinate of the possible neighbor.
+                y1 = p[j,1]                                                         # y coordinate of the possible neighbor.
+                d  = np.sqrt((x - x1)**2 + (y - y1)**2)                             # Distance from the possible neighbor to the central node.
+                dmin[i] = min(dmin[i],d)
+    dist = (3/2)*max(max(dmin))
 
     # Search of the neighbor nodes
     for i in np.arange(m):                                                          # For each of the nodes.

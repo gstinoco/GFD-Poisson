@@ -35,8 +35,7 @@ nomt = 'Results/Triangulations/' + region + '_' + cloud + '.png'
 
 # Node data is saved
 p   = mat['p']
-pb  = mat['pb']
-tt  = mat['t']
+tt  = mat['tt']
 if tt.min() == 1:
     tt -= 1
 
@@ -70,14 +69,14 @@ print('The mean square error in the mesh', region, 'with', mesh, 'points per sid
 Graph.Mesh_Static(x, y, phi_ap, phi_ex)
 
 # Poisson 2D computed in a triangulation
-phi_ap, phi_ex, vec = Poisson_2D.Triangulation(p, pb, tt, phi, f)
+phi_ap, phi_ex, vec = Poisson_2D.Triangulation(p, tt, phi, f)
 er = Errors.Cloud_Static(p, vec, phi_ap, phi_ex)
 print('The mean square error in the triangulation', region, 'with size', cloud, 'is: ', er)
 #Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomt)
 Graph.Cloud_Static(p, tt, phi_ap, phi_ex)
 
 # Poisson 2D computed in an unstructured cloud of points
-phi_ap, phi_ex, vec = Poisson_2D.Cloud(p, pb, phi, f)
+phi_ap, phi_ex, vec = Poisson_2D.Cloud(p, phi, f)
 er = Errors.Cloud_Static(p, vec, phi_ap, phi_ex)
 print('The mean square error in the unstructured cloud of points', region, 'with size', cloud, 'is: ', er)
 #Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomc)

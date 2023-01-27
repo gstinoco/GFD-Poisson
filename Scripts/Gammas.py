@@ -55,14 +55,13 @@ def Mesh(x, y, L):
 
     return Gamma
 
-def Cloud(p, pb, vec, L):
+def Cloud(p, vec, L):
     # Unstructured Clouds of Points and Triangulations Gammas Computation.
     # 
     # This routine computes the Gamma values for unstructured clouds of points and triangulations.
     # 
     # Input parameters
-    #   p           m x 2           Array           Array with the coordinates of the nodes.
-    #   pb          b x 2           Array           Array with the coordinates of the boundary nodes.
+    #   p           m x 3           Array           Array with the coordinates of the nodes and a flag for the boundary.
     #   vec         m x o           Array           Array with the correspondence of the o neighbors of each node.
     #   L           5 x 1           Array           Array with the values of the differential operator.
     # 
@@ -71,24 +70,24 @@ def Cloud(p, pb, vec, L):
 
     nvec  = len(vec[0,:])                                                           # The maximum number of neighbors.
     m     = len(p[:,0])                                                             # The total number of nodes.
-    mf    = len(pb[:,0])                                                            # The number of nodes in the boundary.
     Gamma = np.zeros([m, nvec+1])                                                   # Gamma initialization with zeros.
 
-    for i in np.arange(mf, m):                                                      # For each of the inner nodes.
-        nvec = sum(vec[i,:] != -1)                                                  # The total number of neighbors of the node.
-        dx = np.zeros([nvec])                                                       # dx initialization with zeros.
-        dy = np.zeros([nvec])                                                       # dy initialization with zeros.
+    for i in np.arange(m):                                                          # For each of the nodes.
+        if p[i,2] == 0:                                                             # If the node is not in the boundary.
+            nvec = sum(vec[i,:] != -1)                                              # The total number of neighbors of the node.
+            dx = np.zeros([nvec])                                                   # dx initialization with zeros.
+            dy = np.zeros([nvec])                                                   # dy initialization with zeros.
 
-        for j in np.arange(nvec):                                                   # For each of the neighbor nodes.
-            vec1 = int(vec[i, j])                                                   # The neighbor index is found.
-            dx[j] = p[vec1, 0] - p[i,0]                                             # dx is computed.
-            dy[j] = p[vec1, 1] - p[i,1]                                             # dy is computed.
+            for j in np.arange(nvec):                                               # For each of the neighbor nodes.
+                vec1 = int(vec[i, j])                                               # The neighbor index is found.
+                dx[j] = p[vec1, 0] - p[i,0]                                         # dx is computed.
+                dy[j] = p[vec1, 1] - p[i,1]                                         # dy is computed.
 
-        M = np.vstack([[dx], [dy], [dx**2], [dx*dy], [dy**2]])                      # M matrix is assembled.
-        M = np.linalg.pinv(M)                                                       # The pseudoinverse of matrix M.
-        YY = M@L                                                                    # M*L computation.
-        Gem = np.vstack([-sum(YY), YY]).transpose()                                 # Gamma values are found.
-        for j in np.arange(nvec+1):                                                 # For each of the Gamma values.
-            Gamma[i,j] = Gem[0,j]                                                   # The Gamma value is stored.
+            M = np.vstack([[dx], [dy], [dx**2], [dx*dy], [dy**2]])                  # M matrix is assembled.
+            M = np.linalg.pinv(M)                                                   # The pseudoinverse of matrix M.
+            YY = M@L                                                                # M*L computation.
+            Gem = np.vstack([-sum(YY), YY]).transpose()                             # Gamma values are found.
+            for j in np.arange(nvec+1):                                             # For each of the Gamma values.
+                Gamma[i,j] = Gem[0,j]                                               # The Gamma value is stored.
     
     return Gamma

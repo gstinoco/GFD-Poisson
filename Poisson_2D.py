@@ -85,7 +85,7 @@ def Mesh(x, y, phi, f):
     
     return u_ap, u_ex
 
-def Triangulation(p, pb, tt, phi, f):
+def Triangulation(p, tt, phi, f):
     # 2D Poisson Equation implemented in Triangulations.
     # 
     # This routine calculates an approximation to the solution of Poisson's equation in 2D using a Generalized Finite Differences scheme in triangulations.
@@ -95,8 +95,7 @@ def Triangulation(p, pb, tt, phi, f):
     # \nabla^2 \phi = f
     # 
     # Input parameters
-    #   p           m x 2           Array           Array with the coordinates of the nodes.
-    #   pb          b x 2           Array           Array with the coordinates of the boundary nodes.
+    #   p           m x 3           Array           Array with the coordinates of the nodes and a flag for the boundary.
     #   tt          n x 3           Array           Array with the correspondence of the n triangles.
     #   phi                         function        Function declared with the boundary condition.
     #   f                           function        Function declared with the right side of the equation.
@@ -107,37 +106,38 @@ def Triangulation(p, pb, tt, phi, f):
     
     # Variable initialization
     m    = len(p[:,0])                                                              # The total number of nodes is calculated.
-    mf   = len(pb[:,0])                                                             # The number of boundary nodes is calculated.
     nvec = 8                                                                        # The maximum number of nodes.
     err  = 1                                                                        # err initialization in 1.
     iter = 0                                                                        # Number of iterations.
-    tol  = 1e-16                                                                    # The tolerance is defined.
-    m_it = 40000                                                                    # Maximum number of iterations.
+    tol  = 1e-8                                                                     # The tolerance is defined.
+    m_it = 10000                                                                    # Maximum number of iterations.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
     
     # Boundary conditions
-    for i in np.arange(mf):                                                         # For each of the boundary nodes.
-        u_ap[i]   = phi(pb[i, 0], pb[i, 1])                                         # The boundary condition is assigned.
+    for i in np.arange(m):                                                          # For all the nodes.
+        if p[i,2] == 1:                                                             # If the node is in the boundary.
+            u_ap[i]   = phi(p[i, 0], p[i, 1])                                       # The boundary condition is assigned.
     
     # Neighbor search for all the nodes.
     vec = Neighbors.Triangulation(p, tt, nvec)                                      # Neighbor search with the proper routine.
 
     # Computation of Gamma values
     L = np.vstack([[0], [0], [2], [0], [2]])                                        # The values of the differential operator are assigned.
-    Gamma = Gammas.Cloud(p, pb, vec, L)                                             # Gamma computation.
+    Gamma = Gammas.Cloud(p, vec, L)                                                 # Gamma computation.
 
     # A Generalized Finite Differences Method
     while err >= tol and iter <= m_it:                                              # Check for iterations and tolerance.
         err = 0                                                                     # Error becomes zero to be able to update.
-        for i in np.arange(mf, m):                                                  # For each of the interior nodes.
-            utemp = 0                                                               # utemp is initialized with zero.
-            nvec = sum(vec[i,:] != -1)                                              # The number of neighbors of the central node.
-            for j in np.arange(1,nvec+1):                                           # For each of the neighbor nodes.
-                utemp = utemp + Gamma[i, j]*u_ap[int(vec[i, j-1])]                  # utemp is computed.
-            t = (f(p[i, 0], p[i, 1]) - utemp)/Gamma[i,0]                            # The central node is added to the approximation.
-            err = max(err, abs(t - u_ap[i]));                                       # Error computation.
-            u_ap[i] = t;                                                            # The previously computed value is assigned.
+        for i in np.arange(m):                                                      # For each of the nodes.
+            if p[i,2] == 0:                                                         # If the node is not in the boundary.
+                utemp = 0                                                           # utemp is initialized with zero.
+                nvec = sum(vec[i,:] != -1)                                          # The number of neighbors of the central node.
+                for j in np.arange(1,nvec+1):                                       # For each of the neighbor nodes.
+                    utemp = utemp + Gamma[i, j]*u_ap[int(vec[i, j-1])]              # utemp is computed.
+                t = (f(p[i, 0], p[i, 1]) - utemp)/Gamma[i,0]                        # The central node is added to the approximation.
+                err = max(err, abs(t - u_ap[i]));                                   # Error computation.
+                u_ap[i] = t;                                                        # The previously computed value is assigned.
         iter += 1                                                                   # 1 is added to the number of iterations.
     
     # Theoretical Solution
@@ -146,7 +146,7 @@ def Triangulation(p, pb, tt, phi, f):
 
     return u_ap, u_ex, vec
 
-def Cloud(p, pb, phi, f):
+def Cloud(p, phi, f):
     # 2D Poisson Equation implemented in unstructured clouds of points.
     # 
     # This routine calculates an approximation to the solution of Poisson's equation in 2D using a Generalized Finite Differences scheme in unstructured clouds of points.
@@ -156,8 +156,7 @@ def Cloud(p, pb, phi, f):
     # \nabla^2 \phi = f
     # 
     # Input parameters
-    #   p           m x 2           Array           Array with the coordinates of the nodes.
-    #   pb          b x 2           Array           Array with the coordinates of the boundary nodes.
+    #   p           m x 3           Array           Array with the coordinates of the nodes and a flag for the boundary.
     #   phi                         function        Function declared with the boundary condition.
     #   f                           function        Function declared with the right side of the equation.
     # 
@@ -167,37 +166,38 @@ def Cloud(p, pb, phi, f):
 
     # Variable initialization
     m    = len(p[:,0])                                                              # The total number of nodes is calculated.
-    mf   = len(pb[:,0])                                                             # The number of boundary nodes is calculated.
     nvec = 8                                                                        # The maximum number of nodes.
     err  = 1                                                                        # err initialization in 1.
     iter = 0                                                                        # Number of iterations.
-    tol  = 1e-16                                                                    # The tolerance is defined.
-    m_it = 40000                                                                    # Maximum number of iterations.
+    tol  = 1e-8                                                                     # The tolerance is defined.
+    m_it = 10000                                                                    # Maximum number of iterations.
     u_ap = np.zeros([m])                                                            # u_ap initialization with zeros.
     u_ex = np.zeros([m])                                                            # u_ex initialization with zeros.
 
     # Boundary conditions
-    for i in np.arange(mf):                                                         # For each of the boundary nodes.
-        u_ap[i] = phi(pb[i, 0],   pb[i, 1])                                         # The boundary condition is assigned.
+    for i in np.arange(m):                                                          # For all the nodes.
+        if p[i,2] == 1:                                                             # If the node is in the boundary.
+            u_ap[i]   = phi(p[i, 0], p[i, 1])                                       # The boundary condition is assigned.
     
     # Neighbor search for all the nodes.
-    vec = Neighbors.Cloud(p, pb, nvec)                                              # Neighbor search with the proper routine.
+    vec = Neighbors.Cloud(p, nvec)                                                  # Neighbor search with the proper routine.
 
     # Computation of Gamma values
     L = np.vstack([[0], [0], [2], [0], [2]])                                        # The values of the differential operator are assigned.
-    Gamma = Gammas.Cloud(p, pb, vec, L)                                             # Gamma computation.
+    Gamma = Gammas.Cloud(p, vec, L)                                                 # Gamma computation.
 
     # A Generalized Finite Differences Method
     while err >= tol and iter <= m_it:                                              # Check for iterations and tolerance.
         err = 0                                                                     # Error becomes zero to be able to update.
-        for i in np.arange(mf, m):                                                  # For each of the interior nodes.
-            utemp = 0                                                               # utemp is initialized with zero.
-            nvec = sum(vec[i,:] != -1)                                              # The number of neighbors of the central node.
-            for j in np.arange(1,nvec+1):                                           # For each of the neighbor nodes.
-                utemp = utemp + Gamma[i, j]*u_ap[int(vec[i, j-1])]                  # utemp is computed.
-            t = (f(p[i, 0], p[i, 1]) - utemp)/Gamma[i,0]                            # The central node is added to the approximation.
-            err = max(err, abs(t - u_ap[i]));                                       # Error computation.
-            u_ap[i] = t;                                                            # The previously computed value is assigned.
+        for i in np.arange(m):                                                      # For each of the nodes.
+            if p[i,2] == 0:                                                         # If the node is not in the boundary.
+                utemp = 0                                                           # utemp is initialized with zero.
+                nvec = sum(vec[i,:] != -1)                                          # The number of neighbors of the central node.
+                for j in np.arange(1,nvec+1):                                       # For each of the neighbor nodes.
+                    utemp = utemp + Gamma[i, j]*u_ap[int(vec[i, j-1])]              # utemp is computed.
+                t = (f(p[i, 0], p[i, 1]) - utemp)/Gamma[i,0]                        # The central node is added to the approximation.
+                err = max(err, abs(t - u_ap[i]));                                   # Error computation.
+                u_ap[i] = t;                                                        # The previously computed value is assigned.
         iter += 1                                                                   # 1 is added to the number of iterations.
     
     # Theoretical Solution
