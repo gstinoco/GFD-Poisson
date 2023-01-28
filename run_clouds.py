@@ -24,7 +24,7 @@ import Poisson_2D
 # Triangulation or unstructured cloud of points to work in.
 
 regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','SWA','ZIR']
-sizes = ['1']#, '2', '3']
+sizes = ['1', '2', '3']
 
 for reg in regions:
     region = reg
@@ -60,5 +60,5 @@ for reg in regions:
         phi_ap, phi_ex, vec = Poisson_2D.Cloud(p, phi, f)
         er = Errors.Cloud_Static(p, vec, phi_ap, phi_ex)
         print('The mean square error in the unstructured cloud of points', region, 'with size', cloud, 'is: ', er)
-        #Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomc)
+        Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomc)
         #Graph.Cloud_Static(p, tt, phi_ap, phi_ex)
