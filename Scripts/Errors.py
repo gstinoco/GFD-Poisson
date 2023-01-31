@@ -6,13 +6,13 @@
 # With the funding of:
 #   National Council of Science and Technology, CONACyT (Consejo Nacional de Ciencia y Tecnología, CONACyT). México.
 #   Coordination of Scientific Research, CIC-UMSNH (Coordinación de la Investigación Científica de la Universidad Michoacana de San Nicolás de Hidalgo, CIC-UMSNH). México
-#   Aula CIMNE Morelia. México
+#   Aula CIMNE-Morelia. México
 #
 # Date:
 #   November, 2022.
 #
 # Last Modification:
-#   December, 2022.
+#   January, 2023.
 
 # Routines to calculate the mean square error for the Generalized Finite Difference methods. 2 ways are proposed to calculate the error:
 # 

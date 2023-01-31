@@ -6,7 +6,7 @@
 # With the funding of:
 #   National Council of Science and Technology, CONACyT (Consejo Nacional de Ciencia y Tecnología, CONACyT). México.
 #   Coordination of Scientific Research, CIC-UMSNH (Coordinación de la Investigación Científica de la Universidad Michoacana de San Nicolás de Hidalgo, CIC-UMSNH). México
-#   Aula CIMNE Morelia. México
+#   Aula CIMNE-Morelia. México
 #
 # Date:
 #   January, 2023.
@@ -14,15 +14,15 @@
 # Last Modification:
 #   January, 2023.
 
-from scipy.io import loadmat
 import numpy as np
+from scipy.io import loadmat
 import Scripts.Errors as Errors
 import Scripts.Graph as Graph
 import Poisson_2D
 
 # Region data is loaded.
 
-regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','SWA','ZIR']
+regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','ZIR']
 sizes = ['21', '41','81']
 
 for reg in regions:
