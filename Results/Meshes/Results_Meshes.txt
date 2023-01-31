@@ -43,11 +43,6 @@ PAT:
     The mean square error in the mesh PAT with 41 points per side is:  nan
     The mean square error in the mesh PAT with 81 points per side is:  nan
 
-SWA:
-    The mean square error in the mesh SWA with 21 points per side is:  0.002751597144475708
-    The mean square error in the mesh SWA with 41 points per side is:  0.0007054289441037827
-    The mean square error in the mesh SWA with 81 points per side is:  0.0001750509412371826
-
 ZIR:
     The mean square error in the mesh ZIR with 21 points per side is:  0.0006892063758693404
     The mean square error in the mesh ZIR with 41 points per side is:  0.0001545614069038902
