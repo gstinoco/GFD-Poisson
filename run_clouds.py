@@ -16,6 +16,7 @@
 
 import numpy as np
 from scipy.io import loadmat
+from scipy.io import savemat
 import Scripts.Errors as Errors
 import Scripts.Graph as Graph
 import Poisson_2D
@@ -23,8 +24,8 @@ import Poisson_2D
 # Region data is loaded.
 # Triangulation or unstructured cloud of points to work in.
 
-regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','ZIR']
-sizes = ['1', '2', '3']
+regions = ["CUA","ENG","HAB","PAT"]#['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','ZIR']
+sizes = ["1"]#['1', '2', '3']
 
 for reg in regions:
     region = reg
@@ -57,8 +58,11 @@ for reg in regions:
             return fun
 
         # Poisson 2D computed in an unstructured cloud of points
-        phi_ap, phi_ex, vec = Poisson_2D.Cloud(p, phi, f)
-        er = Errors.Cloud_Static(p, vec, phi_ap, phi_ex)
+        phi_ap, phi_ex, vec = Poisson_2D.Cloud_K(p, phi, f)
+        er = Errors.Cloud(p, vec, phi_ap, phi_ex)
         print('The mean square error in the unstructured cloud of points', region, 'with size', cloud, 'is: ', er)
-        Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomc)
-        #Graph.Cloud_Static(p, tt, phi_ap, phi_ex)
+        #Graph.Cloud_Static_sav(p, tt, phi_ap, phi_ex, nomc)
+        Graph.Cloud_Static(p, tt, phi_ap, phi_ex)
+
+#        mdic = {'phi_ap': phi_ap, 'phi_ex': phi_ex, 'p': p, 'tt': tt}
+#        savemat(region + '.mat', mdic)

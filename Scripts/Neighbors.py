@@ -1,34 +1,36 @@
-# All the codes presented below were developed by:
-#   Dr. Gerardo Tinoco Guerrero
-#   Universidad Michoacana de San Nicolás de Hidalgo
-#   gerardo.tinoco@umich.mx
-#
-# With the funding of:
-#   National Council of Science and Technology, CONACyT (Consejo Nacional de Ciencia y Tecnología, CONACyT). México.
-#   Coordination of Scientific Research, CIC-UMSNH (Coordinación de la Investigación Científica de la Universidad Michoacana de San Nicolás de Hidalgo, CIC-UMSNH). México
-#   Aula CIMNE-Morelia. México
-#
-# Date:
-#   November, 2022.
-#
-# Last Modification:
-#   January, 2023.
+"""
+All the codes presented below were developed by:
+    Dr. Gerardo Tinoco Guerrero
+    Universidad Michoacana de San Nicolás de Hidalgo
+    gerardo.tinoco@umich.mx
 
-# Routines to find neighboring nodes in a triangulation or in a cloud of points.
+With the funding of:
+    National Council of Science and Technology, CONACyT (Consejo Nacional de Ciencia y Tecnología, CONACyT). México.
+    Coordination of Scientific Research, CIC-UMSNH (Coordinación de la Investigación Científica de la Universidad Michoacana de San Nicolás de Hidalgo, CIC-UMSNH). México
+    Aula CIMNE-Morelia. México
+
+Date:
+    November, 2022.
+
+Last Modification:
+    March, 2023.
+"""
 
 import numpy as np
 
 def Triangulation(p, tt, nvec):
-    # Triangulation
-    # Routine to find the neighbor nodes in a triangulation generated with dmsh on Python.
-    #
-    # Input parameters
-    #   p           m x 2           double          Array with the coordinates of the nodes.
-    #   tt          n x 3           double          Array with the correspondence of the n triangles.
-    #   nvec                        integer         Maximum number of neighbors.
-    # 
-    # Output parameters
-    #   vec         m x nvec        double          Array with matching neighbors of each node.
+    """
+    Triangulation
+    Function to find the neighbor nodes in a triangulation.
+    
+    Input:
+        p           m x 2           double          Array with the coordinates of the nodes.
+        tt          n x 3           double          Array with the correspondence of the n triangles.
+        nvec                        integer         Maximum number of neighbors.
+    
+    Output:
+        vec         m x nvec        double          Array with matching neighbors of each node.
+    """
 
     # Variable initialization
     m   = len(p[:,0])                                                               # The size if the triangulation is obtained.
@@ -46,15 +48,17 @@ def Triangulation(p, tt, nvec):
     return vec
 
 def Cloud(p, nvec):
-    # Clouds
-    # Routine to find the neighbor nodes in a cloud of points generated with dmsh on Python.
-    #
-    # Input parameters
-    #   p           m x 3           Array           Array with the coordinates of the nodes and a flag for the boundary.
-    #   nvec                        integer         Maximum number of neighbors.
-    # 
-    # Output parameters
-    #   vec         m x nvec        double          Array with matching neighbors of each node.
+    """
+    Clouds
+    Routine to find the neighbor nodes in a cloud of points generated with dmsh on Python.
+    
+    Input:
+        p           m x 3           Array           Array with the coordinates of the nodes and a flag for the boundary.
+        nvec                        integer         Maximum number of neighbors.
+    
+    Output:
+        vec         m x nvec        double          Array with matching neighbors of each node.
+    """
 
     # Variable initialization
     m    = len(p[:,0])                                                              # The size if the triangulation is obtained.

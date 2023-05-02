@@ -1,60 +1,58 @@
-# All the codes presented below were developed by:
-#   Dr. Gerardo Tinoco Guerrero
-#   Universidad Michoacana de San Nicolás de Hidalgo
-#   gerardo.tinoco@umich.mx
-#
-# With the funding of:
-#   National Council of Science and Technology, CONACyT (Consejo Nacional de Ciencia y Tecnología, CONACyT). México.
-#   Coordination of Scientific Research, CIC-UMSNH (Coordinación de la Investigación Científica de la Universidad Michoacana de San Nicolás de Hidalgo, CIC-UMSNH). México
-#   Aula CIMNE-Morelia. México
-#
-# Date:
-#   November, 2022.
-#
-# Last Modification:
-#   January, 2023.
+"""
+All the codes presented below were developed by:
+    Dr. Gerardo Tinoco Guerrero
+    Universidad Michoacana de San Nicolás de Hidalgo
+    gerardo.tinoco@umich.mx
 
-# Routines to calculate the mean square error for the Generalized Finite Difference methods. 2 ways are proposed to calculate the error:
-# 
-#     \| e \|^2 = \left(\sqrt{\sum_{i} (u_{i}^{k} - U_{i}^{k})}\right) A_{i}
-# 
-#     1.   The problem was solved in logically rectangular meshes.
-#     2.   The problem was solved in triangulations or unstructured clouds of points.
+With the funding of:
+    National Council of Science and Technology, CONACyT (Consejo Nacional de Ciencia y Tecnología, CONACyT). México.
+    Coordination of Scientific Research, CIC-UMSNH (Coordinación de la Investigación Científica de la Universidad Michoacana de San Nicolás de Hidalgo, CIC-UMSNH). México
+    Aula CIMNE-Morelia. México
+
+Date:
+    November, 2022.
+
+Last Modification:
+    March, 2023.
+"""
 
 import numpy as np
 
 def PolyArea(x,y):
-    # PolyArea
-    # A function is defined to calculate the area of a polygon defined by the vertices whose coordinates are stored in $x$ and $y$.
-    # 
-    # Input parameters
-    #   x           m x n           Array           Array with the coordinates in x of the vertices of the polygon.
-    #   y           m x n           Array           Array with the coordinates in y of the vertices of the polygon.
-    # 
-    # Output parameters
-    #   area                        Real            Area of the polygon.
+    """
+    PolyArea
+    Function to calculate the area of a polygon defined by the vertices whose coordinates are stored in $x$ and $y$.
+    
+    Input:
+        x           m x n           Array           Array with the coordinates in x of the vertices of the polygon.
+        y           m x n           Array           Array with the coordinates in y of the vertices of the polygon.
+    
+    Output:
+        area                        Real            Area of the polygon.
+    """
     
     area = 0.5*np.abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
 
     return area
  
-def Mesh_Static(x, y, u_ap, u_ex):
-    # Mesh_Static
-    # Routine to compute the error in a logically rectangular mesh for a problem that does not depend on time.
-    # The polygon used to calculate the area is the one defined by all the immediate neighbors of the central node.
-    #
-    # Input parameters
-    #   x           m x n           Array           Array with the coordinates in x of the nodes.
-    #   y           m x n           Array           Array with the coordinates in y of the nodes.
-    #   u_ap        m x n           Array           Array with the computed solution.
-    #   u_ex        m x n           Array           Array with the theoretical solution.
-    # 
-    # Output parameters
-    #   er                          Real        Mean square error.
+def Mesh(x, y, u_ap, u_ex):
+    """
+    Mesh_Transient
+    Function to compute the error in a logically rectangular mesh for a problem that depends on time.
+    The polygon used to calculate the area is the one defined by all the immediate neighbors of the central node.
+    
+    Input:
+        x           m x n           Array           Array with the coordinates in x of the nodes.
+        y           m x n           Array           Array with the coordinates in y of the nodes.
+        u_ap        m x n x t       Array           Array with the computed solution.
+        u_ex        m x n x t       Array           Array with the theoretical solution.
+    
+    Output:
+        er          t x 1           Array           Mean square error computed on each time step.
+    """
 
-    me   = x.shape                                                                  # The size of the mesh is found.
-    m    = me[0]                                                                    # The number of nodes in x.
-    n    = me[1]                                                                    # The number of nodes in y.
+    m = len(x[:,0])                                                                 # The number of nodes in x.
+    n = len(x[0,:])                                                                 # The number of nodes in y.
     er   = 0                                                                        # er initialization with 0.
     area = np.zeros([m,n])                                                          # area initialization with zeros.
 
@@ -70,23 +68,25 @@ def Mesh_Static(x, y, u_ap, u_ex):
         for j in np.arange(n):                                                      # For each of the nodes on the y axis.
             er = er + area[i,j]*(u_ap[i,j] - u_ex[i,j])**2                          # Mean square error computation.
     
-    er = np.sqrt(er)                                                              # The square root is computed.
+    er = np.sqrt(er)                                                                # The square root is computed.
     
     return er
 
-def Cloud_Static(p, vec, u_ap, u_ex):
-    # Cloud_Static
-    # Routine to compute the error in a triangulation or an unstructured cloud of points for a problem that does not depend on time.
-    # The polygon used to calculate the area is the one defined by all the immediate neighbors of the central node.
-    #
-    # Input parameters
-    #   p           m x 2           Array           Array with the coordinates of the nodes.
-    #   vec         m x nvec        Array           Array with the correspondence of the nvec neighbors of each node.
-    #   u_ap        m x 1           Array           Array with the computed solution.
-    #   u_ex        m x 1           Array           Array with the theoretical solution.
-    # 
-    # Output parameters
-    #   er                          Real            Mean square error.
+def Cloud(p, vec, u_ap, u_ex):
+    """
+    Cloud
+    Function to compute the error in a triangulation or an unstructured cloud of points for a problem that depends on time.
+    The polygon used to calculate the area is the one defined by all the immediate neighbors of the central node.
+    
+    Input:
+        p           m x 2           Array           Array with the coordinates of the nodes.
+        vec         m x nvec        Array           Array with the correspondence of the nvec neighbors of each node.
+        u_ap        m x t           Array           Array with the computed solution.
+        u_ex        m x t           Array           Array with the theoretical solution.
+    
+    Output:
+        er          t x 1           Array           Mean square error computed on each time step.
+    """
 
     m    = len(p[:,0])                                                              # The total number of nodes is calculated.
     er   = 0                                                                        # er initialization with 0.

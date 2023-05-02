@@ -22,8 +22,8 @@ import Poisson_2D
 
 # Region data is loaded.
 
-regions = ['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','ZIR']
-sizes = ['21', '41','81']
+regions = ["CUA","ENG","HAB","PAT"]#['CAB','CUA','CUI','DOW','ENG','GIB','HAB','MIC','PAT','ZIR']
+sizes = ["1"]#['1', '2', '3']
 
 for reg in regions:
     region = reg
@@ -32,8 +32,8 @@ for reg in regions:
         mesh = me
 
         # All data is loaded from the file
-        mat  = loadmat('Data/Meshes/' + region + mesh + '.mat')
-        nomm = 'Results/Meshes/' + region + mesh + '.png'
+        mat  = loadmat('Data/Meshes/' + region + '_' + mesh + '.mat')
+        nomm = 'Results/Meshes/' + region + '_' + mesh + '.png'
 
         # Node data is saved
         x  = mat['x']
@@ -54,8 +54,8 @@ for reg in regions:
             return fun
 
         # Poisson 2D computed in a logically rectangular mesh
-        phi_ap, phi_ex = Poisson_2D.Mesh(x, y, phi, f)
-        er = Errors.Mesh_Static(x, y, phi_ap, phi_ex)
+        phi_ap, phi_ex = Poisson_2D.Mesh_K(x, y, phi, f)
+        er = Errors.Mesh(x, y, phi_ap, phi_ex)
         print('The mean square error in the mesh', region, 'with', mesh, 'points per side is: ', er)
         #Graph.Mesh_Static_sav(x, y, phi_ap, phi_ex, nomm)
         Graph.Mesh_Static(x, y, phi_ap, phi_ex)
